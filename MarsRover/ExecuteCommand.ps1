@@ -1,9 +1,11 @@
 ﻿$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
-$exePath = "$scriptPath\MarsRover.exe"
-$arguments = "5 5",
+$marsRoverExePath = "$scriptPath\MarsRover.exe"
+
+# This is the sample input
+$inputArguments = "5 5",
                 "1 2 N",
                 "LMLMLMLMM",
                 "3 3 E",
                 "MMRMMRMRRM"
 
-& $exePath $arguments
+& $marsRoverExePath $inputArguments
