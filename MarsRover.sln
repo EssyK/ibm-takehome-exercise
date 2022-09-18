@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover", "MarsRover.csproj", "{540EB98C-D047-4A1B-88F3-C70B22893E82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover", "MarsRover\MarsRover.csproj", "{540EB98C-D047-4A1B-88F3-C70B22893E82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRoverTest", "..\MarsRoverTest\MarsRoverTest.csproj", "{46E89100-2597-4BEB-8E93-DAFA2D90BB6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRoverTest", "MarsRoverTest\MarsRoverTest.csproj", "{46E89100-2597-4BEB-8E93-DAFA2D90BB6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
