@@ -3,6 +3,13 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <BaseOutputPath>..\MarsRoverBuild\</BaseOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="ExecuteCommand.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

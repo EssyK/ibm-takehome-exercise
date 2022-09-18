@@ -8,7 +8,7 @@ namespace MarsRover
         static void Main(string[] args)
         {
             RoverNavigation roverNavigation = new RoverNavigation(args);
-            if(roverNavigation.IsValid) roverNavigation.Navigate();
+            if(roverNavigation.IsValid) roverNavigation.Navigate();            
         }
     }
 
