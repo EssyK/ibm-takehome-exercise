@@ -8,16 +8,26 @@ namespace MarsRover
     {
         readonly string[] NASAInput;
         public readonly bool IsValid;
+        private Dictionary<string, Dictionary<string, string>> compassDict;
+        private Dictionary<string, string> movementDict;
 
         public RoverNavigation()
         {
             IsValid = false;
+            SetConstants();
         }
 
         public RoverNavigation(string[] input)
         {
             NASAInput = input;
             IsValid = ValidateInput(input);
+            SetConstants();
+        }
+
+        private void SetConstants()
+        {
+            compassDict = GetCompass();
+            movementDict = GetDirectionMovement();
         }
 
         private bool ValidateInput(string[] input)
@@ -54,9 +64,6 @@ namespace MarsRover
         /// <returns></returns>
         public string GetFinalCoordinates(string upperRightCoordinates, string roverPosition, string instruction)
         {
-            var compassDict = GetCompass();
-            var movementDict = GetDirectionMovement();
-
             //The upper Right coordinates provide the boundary beyond which the rover cannot go
             var urcSplit = upperRightCoordinates.Split(' ');
             Coordinate boundary = new Coordinate(Convert.ToInt32(urcSplit[0]), Convert.ToInt32(urcSplit[1]));
