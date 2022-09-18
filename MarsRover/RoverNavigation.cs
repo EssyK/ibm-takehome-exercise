@@ -45,11 +45,19 @@ namespace MarsRover
             return output;
         }
 
+        /// <summary>
+        /// This function calculates the final coordinates of a rover
+        /// </summary>
+        /// <param name="upperRightCoordinates"></param>
+        /// <param name="roverPosition"></param>
+        /// <param name="instruction"></param>
+        /// <returns></returns>
         public string GetFinalCoordinates(string upperRightCoordinates, string roverPosition, string instruction)
         {
             var compassDict = GetCompass();
             var movementDict = GetDirectionMovement();
 
+            //The upper Right coordinates provide the boundary beyond which the rover cannot go
             var urcSplit = upperRightCoordinates.Split(' ');
             Coordinate boundary = new Coordinate(Convert.ToInt32(urcSplit[0]), Convert.ToInt32(urcSplit[1]));
 
@@ -91,6 +99,12 @@ namespace MarsRover
             return $"{currentX} {currentY} {currentPosition}";
         }
 
+        /// <summary>
+        /// This function returns a Dictionary that on reading it, gives the direction a rover would face if turning left or right when facing a certain direction
+        /// The key is the current direction the rover is facing and the value is another internal dictionary that has only 2 key value pairs
+        /// The internal dictionary has a key for the instruction (L or R) and the value is the direction the rover would face based on its current position
+        /// </summary>
+        /// <returns></returns>
         private Dictionary<string, Dictionary<string, string>> GetCompass()
         {
             Dictionary<string, Dictionary<string, string>> compass = new Dictionary<string, Dictionary<string, string>>();
@@ -113,6 +127,12 @@ namespace MarsRover
 
         }
 
+        /// <summary>
+        /// This function returns a Dictionary that has values of how the rover would move given an M instruction facing a particular direction
+        /// The key is the direction the rover is currently facing
+        /// The value is the coordinate (x or y) that would be either increased or decreased
+        /// </summary>
+        /// <returns></returns>
         private Dictionary<string, string> GetDirectionMovement()
         {
             Dictionary<string, string> movement = new Dictionary<string, string>()
@@ -133,7 +153,10 @@ namespace MarsRover
             this.y = y;
         }
 
+        //This indicates movement horizontally
         public int x { get; set; }
+
+        //This indicates movement vertically
         public int y { get; set; }
     }
 
